@@ -182,7 +182,7 @@ function unityShowBanner(msg, type) {
   }
   updateBannerVisibility();
 }
-var buildUrl = 'gusadventure6/build/Build/';
+var buildUrl = 'build/Build/';
 var buildName = '1.0.1';
 var loaderUrl = buildUrl + buildName + '.loader.js';
 var config = {

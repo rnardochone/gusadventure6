@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gus Multiverse Adventure</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <a class="brand-logo" href="#" onclick="window.location.reload();">
+        <img src="https://www.thesportsgeek.com/app/uploads/2020/12/Slots.lv-Logo.png" alt="">
+    </a>
+
+    <div class="backgrounds-container">
+        <div class="layer-back"></div>
+        <div class="layer-front"></div>
+        <div class="layer-ground"></div>
+    </div>
+
+
+    <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas" width=960 height=600></canvas>
+        <div id="unity-loading-bar">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+        </div>
+        <div id="unity-warning"></div>
+    </div>
+
+    <section id="sectionHome" class="currentSection">
+        <div class="sectionWrapper sectionHome">
+            <p>Gus has found a way to travel into other universes and get their riches!</p>
+            <div class="hero-image">
+                <img src="./img/instructions_gus.webp" alt="Gus jumping into anothe universe">
+            </div>
+
+            <div class="buttons-wrapper">
+                <div class="buttons-inner-wrapper">
+                    <button onclick="changeCurrent('Instructions');">INSTRUCTIONS</button>
+                    <button onclick="changeCurrent('Leaderboard');populateTable();">LEADERBOARD</button>
+                </div>
+                <button id="playButton" onclick="playBtn();">▶</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sectionInstructions">
+        <div class="sectionWrapper sectionInstructions">
+            <div class="instructions__wrapper">
+                <p>Click/Tap to jump and double jump to avoid obstacles</p>
+                <div class="images-container">
+                    <img src="./img/trap1.webp" alt="saw trap">
+                    <img src="./img/trap2.webp" alt="ball trap">
+                    <img src="./img/trap3.webp" alt="fire trap">
+                </div>
+            </div>
+            <div class="instructions__wrapper">
+                <p>Collect coins and power ups to increase your score!</p>
+                <div class="images-container">
+                    <img src="./img/hearth.webp" alt="hearth power up">
+                    <img src="./img/shield.webp" alt="shield power up">
+                    <img src="./img/star.webp" alt="star power up">
+                </div>
+            </div>
+            <button id="playButton" onclick="playBtn();">▶</button>
+        </div>
+    </section>
+
+    <section id="sectionForm">
+        <div class="sectionWrapper sectionForm">
+            <h2 id="endScore">432432</h2>
+            <p>Register to save your score and play again!</p>
+            <div class="form-container">
+                <input type="text" name="name" id="nameInput" placeholder="Name...">
+                <input type="text" name="display-name" id="displayInput" placeholder="Display name...">
+                <input type="email" name="email" id="emailInput" placeholder="yourmail@example.com" disabled>
+
+                <div class="social-oauth-container">
+                    <button id="facebook-button" onclick="fb_login();"></button>
+                    <div class="googleBtn">
+                        <div id="g_id_onload"
+                            data-client_id="2946610537-akekvmf9cu6h8smt4aq9t2bbvn8ou0t5.apps.googleusercontent.com"
+                            data-context="signin" data-ux_mode="popup" data-callback="googleLoginHandler"
+                            data-itp_support="true">
+                        </div>
+
+                        <div class="g_id_signin" data-type="icon" data-shape="circle" data-theme="outline"
+                            data-text="continue_with" data-size="large">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="submit-button">SUBMIT</button>
+                <button class="grayedOut" onclick="openLeaderboard();">LEADERBOARD</button>
+                <button class="grayedOut" onclick="playAgainBtn();">PLAY AGAIN</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="sectionLeaderboard">
+        <div class="sectionWrapper sectionLeaderboard">
+
+            <h2>LEADERBOARD</h2>
+            <div class="tableContainer">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="buttons-container">
+                <button onclick="playAgainBtn();">PLAY AGAIN</button>
+                <button onclick="changeCurrent('Home');">HOME</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

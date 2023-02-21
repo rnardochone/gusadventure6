@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+*,
+*::after,
+*::before:not(i) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
+}
+
+.backgrounds-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+.backgrounds-container .layer-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgb(45, 209, 199);
+  background-image: url("./img/cave_l2.webp");
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  animation: animateBackground 8s linear infinite;
+}
+.backgrounds-container .layer-front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("./img/cave_l1.webp");
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  animation: animateBackground 5s linear infinite;
+}
+.backgrounds-container .layer-ground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("./img/cave_ground.webp");
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  animation: animateBackground 4s linear infinite;
+}
+
+@keyframes animateBackground {
+  from {
+    background-position: 0vh;
+  }
+  to {
+    background-position: -100vh;
+  }
+}
+.sectionHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.sectionHome .hero-image {
+  max-width: 600px;
+}
+.sectionHome .buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .sectionHome .buttons-wrapper {
+    flex-direction: column-reverse;
+  }
+}
+.sectionHome .buttons-wrapper .buttons-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.sectionHome .buttons-wrapper #playButton {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  font-size: 3rem;
+  color: white;
+}
+
+.sectionInstructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.sectionInstructions .instructions__wrapper .images-container {
+  max-width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: clamp(5px, 1vw, 30px);
+  height: 75px;
+}
+.sectionInstructions .instructions__wrapper .images-container img {
+  max-width: 33%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.sectionInstructions #playButton {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  font-size: 3rem;
+  color: white;
+}
+
+.sectionLeaderboard {
+  height: 100%;
+  padding-bottom: 80px;
+  text-align: center;
+}
+.sectionLeaderboard .buttons-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+  gap: 10px;
+}
+.sectionLeaderboard .tableContainer {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+.sectionLeaderboard .tableContainer table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  max-width: 400px;
+  width: 100%;
+}
+.sectionLeaderboard .tableContainer table tbody {
+  gap: 10px;
+}
+.sectionLeaderboard .tableContainer table tbody tr {
+  background-color: rgba(180, 180, 180, 0.9);
+}
+.sectionLeaderboard .tableContainer table tbody tr:nth-child(odd) {
+  background-color: rgba(240, 240, 240, 0.9);
+}
+.sectionLeaderboard .tableContainer table tbody tr:last-child :first-child {
+  border-radius: 0 0 0 10px;
+}
+.sectionLeaderboard .tableContainer table tbody tr:last-child :last-child {
+  border-radius: 0 0 10px 0;
+}
+.sectionLeaderboard .tableContainer table td,
+.sectionLeaderboard .tableContainer table th {
+  text-align: center;
+  vertical-align: top;
+}
+.sectionLeaderboard .tableContainer table td {
+  font-size: 14px;
+  overflow: hidden;
+  padding: 10px 15px;
+  word-break: normal;
+}
+.sectionLeaderboard .tableContainer table td:first-child {
+  font-weight: bold;
+  width: 1px;
+}
+.sectionLeaderboard .tableContainer table th {
+  background-color: orange;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+  padding: 10px 15px;
+  word-break: normal;
+}
+.sectionLeaderboard .tableContainer table th:first-child {
+  border-radius: 10px 0 0 0;
+  width: 75px;
+}
+.sectionLeaderboard .tableContainer table th:last-child {
+  border-radius: 0 10px 0 0;
+  max-width: 150px;
+  word-wrap: break-word;
+}
+
+.sectionForm h2 {
+  margin-bottom: 20px;
+}
+.sectionForm .form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  margin-top: 30px;
+  padding: 10px;
+  overflow-y: auto;
+}
+.sectionForm .form-container .social-oauth-container {
+  display: flex;
+  gap: 10px;
+}
+.sectionForm .form-container .social-oauth-container::before, .sectionForm .form-container .social-oauth-container::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: auto;
+}
+.sectionForm .form-container .social-oauth-container .googleBtn * {
+  box-sizing: content-box;
+}
+.sectionForm .form-container .social-oauth-container button {
+  all: unset;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  aspect-ratio: 1;
+  text-align: center;
+  font-weight: bolder;
+  color: white;
+  background-color: blue;
+  cursor: pointer;
+}
+.sectionForm .form-container .social-oauth-container button#facebook-button {
+  background-color: white;
+  background-image: url("./img/facebooklogo.webp");
+  background-size: cover;
+  box-shadow: inset 0 0 2px 1px white;
+}
+.sectionForm .form-container button.grayedOut {
+  filter: grayscale(1);
+  pointer-events: none;
+}
+.sectionForm .form-container input {
+  padding: 5px 20px;
+  font-size: 1.2rem;
+  outline: none;
+  border-right: 5px solid orangered;
+  border-bottom: 5px solid orangered;
+  border-left: 5px solid rgb(229, 255, 0);
+  border-top: 5px solid rgb(229, 255, 0);
+  border-radius: 30px;
+}
+.sectionForm .form-container input:disabled {
+  background-color: rgb(177, 177, 177);
+}
+.sectionForm .form-container input.invalidField {
+  border-color: red;
+  background-color: rgb(255, 165, 165);
+  color: red;
+}
+
+#unity-container {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hiddingClass:not(.dontHideAgain) {
+  display: none !important;
+}
+
+.hiddingUnity {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#unity-container,
+#unity-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 100;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.brand-logo {
+  width: 150px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 99;
+  cursor: pointer;
+}
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  max-width: 900px;
+  height: 100%;
+  margin: auto;
+  margin-top: 60px;
+}
+section .sectionWrapper {
+  padding: 50px;
+  min-height: calc(100vh - 60px);
+}
+@media (max-width: 480px) {
+  section .sectionWrapper {
+    padding: 50px 5px 25px 5px;
+  }
+}
+section.currentSection {
+  display: block;
+}
+section:not(.currentSection) {
+  display: none;
+}
+
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+h2,
+p {
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+h2,
+p,
+span {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-family: "Titan One", cursive;
+  text-align: center;
+  color: gold;
+}
+
+button {
+  padding: 5px 20px;
+  background-color: orange;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border-right: 5px solid orangered;
+  border-bottom: 5px solid orangered;
+  border-left: 5px solid rgb(229, 255, 0);
+  border-top: 5px solid rgb(229, 255, 0);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+button:hover {
+  filter: brightness(1.2);
+}
+button:active {
+  filter: brightness(0.5);
+}
+
+#hideIfNotTouch {
+  display: none;
+}
+
+@media (hover: none) {
+  #hideIfNotTouch {
+    display: block;
+  }
+  #hideIfTouch {
+    display: none;
+  }
+}
